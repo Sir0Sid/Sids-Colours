@@ -2,7 +2,7 @@
   "name": "sids-colours",
   "displayName": "Sids Colours",
   "description": "Pick, convert, insert and check colours - from the command palette (Ctrl+Shift+P). Native colour swatches for hex, rgb and hsl in any file.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "publisher": "Sir0Sid",
   "license": "MIT",
   "icon": "icon.png",
@@ -35,6 +35,23 @@
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
+    "themes": [
+      {
+        "label": "Sids Colours: Soft Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Soft-Blue.json"
+      },
+      {
+        "label": "Sids Colours: Dark Teal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Dark-Teal.json"
+      },
+      {
+        "label": "Sids Colours: Bright Teal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Bright-Teal.json"
+      }
+    ],
     "commands": [
       {
         "command": "sidsColours.palette",

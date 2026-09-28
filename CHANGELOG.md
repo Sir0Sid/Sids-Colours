@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.0
+
+Three colour themes, from Simon's own workbench colour files.
+
+- **Sids Colours: Soft Blue**, **Sids Colours: Dark Teal** and **Sids Colours: Bright Teal** — installed with the extension and selectable from **Preferences: Color Theme**.
+- Every workbench colour in them is his, unchanged. The syntax (`tokenColors`) block in each is an addition, marked inside the file: a theme with no token colours renders every language flat.
+- Bright Teal's base type is corrected from `light` to `dark` — every surface in it is dark, and the type decides which defaults everything unnamed inherits from.
+
 ## 0.1.0
 
 First release.

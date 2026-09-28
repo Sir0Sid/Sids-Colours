@@ -1,6 +1,6 @@
 # Sids Colours
 
-Pick, convert, insert and check colours — from the command palette, or by clicking the square in the gutter.
+Pick, convert, insert and check colours — from the command palette, or by clicking the square in the gutter. It also carries three colour themes for the whole editor.
 
 VS Code has a colour decorator built in, but it only understands CSS, SCSS and LESS. In a PHP file, a JSON theme, a Markdown note, a shell script or a config file a colour is just text: nothing tells you what it looks like, and nothing lets you change it by eye. Sids Colours fills that gap, and adds the commands you want once colours are visible.
 
@@ -40,6 +40,22 @@ Two habits worth knowing:
 | `sidsColours.languages` | 22 languages | Which languages get the colour square. Add any language id, or `"*"` for every file. |
 | `sidsColours.namedColours` | `false` | Also treat CSS colour names (`red`, `cornflowerblue`, `transparent`) as colours. Off by default, because the word "white" in a sentence is not a colour. |
 | `sidsColours.insertFormat` | `hex` | The form written into the file when you insert a colour: `hex`, `rgb` or `hsl`. |
+
+## Themes
+
+Three colour themes for the whole editor, installed with the extension — choose them from **Preferences: Color Theme** (`Ctrl+K Ctrl+T`):
+
+| Theme | Base | What it is |
+| --- | --- | --- |
+| **Sids Colours: Soft Blue** | dark | Muted steel and slate blues, calm and low-contrast. |
+| **Sids Colours: Dark Teal** | dark | Near-black surfaces with a deep teal accent. |
+| **Sids Colours: Bright Teal** | dark | High-contrast teal, `#00ffea` on the accents. |
+
+All three began as hand-written workbench colour files, and **every workbench colour in them is unchanged** — the window, the sidebar, the activity bar, the tabs, the editor, the status bar and the lists are exactly as they were written.
+
+What was added is the **syntax colours**. Those files name the surfaces and no token colours at all, and a theme with no `tokenColors` renders every language flat: one colour of text, no syntax. Each theme's token block is built from that theme's own accent and is marked inside the file as an addition — delete the block and the original file is untouched.
+
+One change to the original files is worth knowing about, because it is not cosmetic: **Bright Teal declared `"type": "light"` while every surface in it is dark.** That setting decides which of VS Code's defaults every colour the theme does *not* name inherits from, so a light base would have dropped light-mode inputs, dropdowns and scrollbars into a dark editor. It now says `dark`, and the file itself carries that note.
 
 ## Notes, honestly
 
