@@ -1,0 +1,247 @@
+{
+  "name": "sids-colours",
+  "displayName": "Sids Colours",
+  "description": "Pick, convert, insert and check colours - from the command palette (Ctrl+Shift+P). Native colour swatches for hex, rgb and hsl in any file.",
+  "version": "0.1.0",
+  "publisher": "Sir0Sid",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "colour",
+    "color",
+    "picker",
+    "hex",
+    "hsl",
+    "rgb",
+    "palette",
+    "contrast",
+    "wcag"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sir0Sid/Sids-Colours.git"
+  },
+  "homepage": "https://github.com/Sir0Sid/Sids-Colours#readme",
+  "bugs": {
+    "url": "https://github.com/Sir0Sid/Sids-Colours/issues"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sidsColours.palette",
+        "title": "Sids Colours: Insert a Colour From My Palette",
+        "category": "Sids Colours"
+      },
+      {
+        "command": "sidsColours.show",
+        "title": "Sids Colours: Show My Palette",
+        "category": "Sids Colours"
+      },
+      {
+        "command": "sidsColours.insert",
+        "title": "Sids Colours: Insert a Colour (type or preset)",
+        "category": "Sids Colours"
+      },
+      {
+        "command": "sidsColours.convert",
+        "title": "Sids Colours: Convert the Colour Here",
+        "category": "Sids Colours"
+      },
+      {
+        "command": "sidsColours.copy",
+        "title": "Sids Colours: Copy the Colour Here As...",
+        "category": "Sids Colours"
+      },
+      {
+        "command": "sidsColours.contrast",
+        "title": "Sids Colours: Check Contrast (readability)",
+        "category": "Sids Colours"
+      },
+      {
+        "command": "sidsColours.save",
+        "title": "Sids Colours: Save the Colour Here to My Palette",
+        "category": "Sids Colours"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "sidsColours.palette",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "sidsColours.convert",
+        "key": "ctrl+alt+shift+c",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "sidsColours.convert",
+          "when": "editorTextFocus",
+          "group": "1_modification@9"
+        },
+        {
+          "command": "sidsColours.copy",
+          "when": "editorTextFocus",
+          "group": "9_cutcopypaste@9"
+        },
+        {
+          "command": "sidsColours.save",
+          "when": "editorTextFocus",
+          "group": "1_modification@10"
+        },
+        {
+          "command": "sidsColours.contrast",
+          "when": "editorTextFocus",
+          "group": "1_modification@11"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Sids Colours",
+      "properties": {
+        "sidsColours.palette": {
+          "type": "array",
+          "order": 1,
+          "markdownDescription": "Your colours, offered by **Sids Colours: Insert a Colour From My Palette** (Ctrl+Alt+C). Replace these with your own - each needs a `name` and a `value`.",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "value"
+            ],
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "What it is called"
+              },
+              "value": {
+                "type": "string",
+                "description": "The colour, as hex / rgb() / hsl() or a CSS name"
+              }
+            }
+          },
+          "default": [
+            {
+              "name": "Midnight",
+              "value": "#0f172a"
+            },
+            {
+              "name": "Ink",
+              "value": "#1e293b"
+            },
+            {
+              "name": "Slate",
+              "value": "#64748b"
+            },
+            {
+              "name": "Paper",
+              "value": "#f8fafc"
+            },
+            {
+              "name": "Sky",
+              "value": "#38bdf8"
+            },
+            {
+              "name": "Teal",
+              "value": "#14b8a6"
+            },
+            {
+              "name": "Lime",
+              "value": "#84cc16"
+            },
+            {
+              "name": "Amber",
+              "value": "#f59e0b"
+            },
+            {
+              "name": "Coral",
+              "value": "#fb7185"
+            },
+            {
+              "name": "Wine",
+              "value": "#9f1239"
+            }
+          ]
+        },
+        "sidsColours.languages": {
+          "type": "array",
+          "order": 2,
+          "markdownDescription": "Language ids that get the native colour square (click it and the picker opens, and what you pick is written back in the format you already used). CSS, SCSS, LESS and SASS are deliberately NOT in the list - VS Code already does those itself and a second provider would draw the square twice. Add any language id, or add `\"*\"` for every file.",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "php",
+            "javascript",
+            "typescript",
+            "javascriptreact",
+            "typescriptreact",
+            "json",
+            "jsonc",
+            "html",
+            "markdown",
+            "yaml",
+            "python",
+            "shellscript",
+            "sql",
+            "xml",
+            "twig",
+            "plaintext",
+            "dotenv",
+            "ini",
+            "dockerfile",
+            "nginx",
+            "apacheconf",
+            "powershell"
+          ]
+        },
+        "sidsColours.namedColours": {
+          "type": "boolean",
+          "order": 3,
+          "default": false,
+          "markdownDescription": "Also treat CSS colour names (`red`, `cornflowerblue`, `transparent`...) as colours. **Off by default**, because the word \"white\" in a paragraph of prose is not a colour and the square under it is just noise."
+        },
+        "sidsColours.insertFormat": {
+          "type": "string",
+          "order": 4,
+          "enum": [
+            "hex",
+            "rgb",
+            "hsl"
+          ],
+          "enumDescriptions": [
+            "#38bdf8",
+            "rgb(56, 189, 248)",
+            "hsl(198, 93%, 60%)"
+          ],
+          "default": "hex",
+          "description": "The format Sids Colours: Insert a Colour writes into the file."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.5.4"
+  }
+}
