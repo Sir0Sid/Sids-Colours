@@ -1,0 +1,51 @@
+{
+    "name": "Sid's Midway Teal",
+    "type": "dark",
+    "colors": {
+        // Main Top Title Bar / Banner (Blended deep sea teal)
+        "titleBar.activeBackground": "#043432",
+        "titleBar.activeForeground": "#ffffff",
+        "titleBar.inactiveBackground": "#004d49",
+
+        // Far Left Menu / Activity Bar (Perfectly balanced clean teal menu background)
+        "activityBar.background": "#032424",
+        "activityBar.foreground": "#80d0cc",
+        "activityBar.inactiveForeground": "#729a9a",
+        "activityBar.activeBorder": "#00d0c2",
+        "activityBarBadge.background": "#00d0c2",
+        "activityBarBadge.foreground": "#808080",
+
+        // Left File Sidebar (Balanced dark slate-teal)
+        "sideBar.background": "#0e1a1a",
+        "sideBar.foreground": "#e0f2f1",
+        "sideBarTitle.foreground": "#00ffea",
+        "sideBarSectionHeader.background": "#1a3331",
+        "sideBarSectionHeader.foreground": "#00ffea",
+
+        // Main Code Editor Windows
+        "editor.background": "#0b1414",
+        "lineHighlightBackground": "#122424",
+        "editorLineNumber.activeForeground": "#00d0c2",
+
+        // Top File Tabs
+        "tab.activeBackground": "#142826",
+        "tab.activeForeground": "#00e2d3",
+        "tab.activeBorder": "#00d0c2",
+        "tab.inactiveBackground": "#0c1616",
+        "tab.inactiveForeground": "#70aba8",
+        "editorGroupHeader.tabsBackground": "#090e0f",
+
+        // Bottom Status Bar
+        "statusBar.background": "#00605c",
+        "statusBar.foreground": "#ffffff",
+
+        // Lists & Selected File Items
+        "list.activeSelectionBackground": "#005c57",
+        "list.activeSelectionForeground": "#80e2de",
+        "list.hoverBackground": "#142a2a",
+
+        // Integrated Panels
+        "panel.background": "#090e0f",
+        "panel.border": "#004d49"
+    }
+}
